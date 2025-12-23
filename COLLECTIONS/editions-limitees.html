@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Éditions Limitées — Heritage Bijoux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="specifique.css">
+  <link rel="stylesheet" href="css/collections.css"> <!-- Ajoutez ce CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">Heritage Bijoux</div>
+  <nav class="nav">
+    <a href="index.html">Accueil</a>
+    <a href="CATEGORIES/bagues.html">Bagues</a>
+    <a href="colliers.html">Colliers</a>
+    <a href="bracelets.html">Bracelets</a>
+    <a href="cart.html">Panier</a>
+  </nav>
+</header>
+
+<section class="collection-hero limited">
+  <h1>Éditions Limitées</h1>
+  <p>Des pièces rares, créées en quantités exclusives</p>
+  
+  <!-- COMPTEUR DE TEMPS -->
+  <div class="limited-counter">
+    <span class="counter-title"><i class="fas fa-clock"></i> Temps restant</span>
+    <div class="counter-timer" id="countdown">
+      <div class="time-unit">
+        <span class="time-number" id="days">03</span>
+        <span class="time-label">Jours</span>
+      </div>
+      <span class="time-separator">:</span>
+      <div class="time-unit">
+        <span class="time-number" id="hours">12</span>
+        <span class="time-label">Heures</span>
+      </div>
+      <span class="time-separator">:</span>
+      <div class="time-unit">
+        <span class="time-number" id="minutes">45</span>
+        <span class="time-label">Minutes</span>
+      </div>
+      <span class="time-separator">:</span>
+      <div class="time-unit">
+        <span class="time-number" id="seconds">30</span>
+        <span class="time-label">Secondes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO ÉDITION LIMITÉE -->
+<div class="limited-info">
+  <h3><i class="fas fa-crown"></i> Collection Exclusive</h3>
+  <p>Ces pièces sont produites en édition limitée à seulement 50 exemplaires chacune. Une fois vendues, elles ne seront jamais reproduites.</p>
+  
+  <div class="limited-features">
+    <div class="limited-feature">
+      <i class="fas fa-gem"></i>
+      <span>Pièces Uniques</span>
+    </div>
+    <div class="limited-feature">
+      <i class="fas fa-certificate"></i>
+      <span>Certificat d'Authenticité</span>
+    </div>
+    <div class="limited-feature">
+      <i class="fas fa-hashtag"></i>
+      <span>Numérotées 1/50</span>
+    </div>
+    <div class="limited-feature">
+      <i class="fas fa-calendar-star"></i>
+      <span>Édition 2025</span>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="product-grid">
+
+    <!-- PRODUIT 1 -->
+    <div class="product-card limited-badge">
+      <!-- COMPTEUR SUR LA CARTE -->
+      <div class="product-counter">
+        <i class="fas fa-bolt"></i> <span id="counter1">12/50 restants</span>
+      </div>
+      
+      <img src="images/limited/limited1.jpg" alt="Bague Impériale">
+      <h3>Bague Impériale</h3>
+      <p class="price">690 €</p>
+      
+      <!-- BARRE DE DISPONIBILITÉ -->
+      <div class="availability-bar">
+        <div class="availability-text">
+          <span>Disponibilité</span>
+          <span class="availability-count">12/50</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 24%"></div>
+        </div>
+      </div>
+      
+      <!-- BADGE QUANTITÉ -->
+      <div class="limited-quantity">
+        <i class="fas fa-box"></i> 12 restants
+      </div>
+      
+      <a href="bijou-bague.html?id=imperiale" class="btn-small">Voir détails</a>
+    </div>
+
+    <!-- PRODUIT 2 -->
+    <div class="product-card limited-badge">
+      <div class="product-counter">
+        <i class="fas fa-bolt"></i> <span id="counter2">08/50 restants</span>
+      </div>
+      
+      <img src="images/limited/limited2.jpg" alt="Collier Éclipse">
+      <h3>Collier Éclipse</h3>
+      <p class="price">820 €</p>
+      
+      <div class="availability-bar">
+        <div class="availability-text">
+          <span>Disponibilité</span>
+          <span class="availability-count">08/50</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 16%"></div>
+        </div>
+      </div>
+      
+      <div class="limited-quantity">
+        <i class="fas fa-box"></i> 08 restants
+      </div>
+      
+      <a href="bijou-collier.html?id=eclipse" class="btn-small">Voir détails</a>
+    </div>
+
+    <!-- PRODUIT 3 -->
+    <div class="product-card limited-badge">
+      <div class="product-counter">
+        <i class="fas fa-bolt"></i> <span id="counter3">05/50 restants</span>
+      </div>
+      
+      <img src="images/limited/limited3.jpg" alt="Bracelet Monarch">
+      <h3>Bracelet Monarch</h3>
+      <p class="price">750 €</p>
+      
+      <div class="availability-bar">
+        <div class="availability-text">
+          <span>Disponibilité</span>
+          <span class="availability-count">05/50</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 10%"></div>
+        </div>
+      </div>
+      
+      <div class="limited-quantity">
+        <i class="fas fa-box"></i> 05 restants
+      </div>
+      
+      <a href="bijou-bracelet.html?id=monarch" class="btn-small">Voir détails</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 Heritage Bijoux — Éditions Limitées</p>
+</footer>
+
+<script>
+  // COMPTEUR DE TEMPS
+  function updateCountdown() {
+    // Date de fin (3 jours à partir de maintenant)
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 3);
+    endDate.setHours(23, 59, 59, 999);
+    
+    const now = new Date().getTime();
+    const distance = endDate - now;
+    
+    // Calculs
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Mise à jour
+    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    
+    // Si le compte à rebours est terminé
+    if (distance < 0) {
+      clearInterval(countdownInterval);
+      document.getElementById('countdown').innerHTML = '<span style="color:#ff4081;font-size:18px;">ÉDITION TERMINÉE</span>';
+    }
+  }
+  
+  // Démarrer le compte à rebours
+  const countdownInterval = setInterval(updateCountdown, 1000);
+  updateCountdown();
+  
+  // SIMULATION DE STOCK (rafraîchir aléatoirement)
+  function updateStock() {
+    const stocks = [12, 8, 5];
+    const elements = ['counter1', 'counter2', 'counter3'];
+    
+    stocks.forEach((stock, index) => {
+      // Simuler une vente occasionnelle
+      if (Math.random() < 0.1 && stock > 0) { // 10% de chance
+        stocks[index]--;
+      }
+      
+      const element = document.getElementById(elements[index]);
+      const bar = document.querySelectorAll('.progress-fill')[index];
+      const quantity = document.querySelectorAll('.limited-quantity')[index];
+      const count = document.querySelectorAll('.availability-count')[index];
+      
+      if (element) {
+        element.textContent = `${stocks[index]}/50 restants`;
+        bar.style.width = `${(stocks[index] / 50) * 100}%`;
+        quantity.innerHTML = `<i class="fas fa-box"></i> ${stocks[index]} restants`;
+        count.textContent = `${stocks[index]}/50`;
+      }
+    });
+  }
+  
+  // Rafraîchir le stock toutes les 30 secondes
+  setInterval(updateStock, 30000);
+</script>
+
+</body>
+</html>

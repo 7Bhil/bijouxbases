@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Compte — Heritage Bijoux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style-account.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Insérez ici le CSS ci-dessus */
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">Heritage Bijoux</div>
+  <nav class="nav">
+    <a href="index.html">Accueil</a>
+    <a href="CATEGORIES/bagues.html">Bijoux</a>
+    <a href="cart.html">Panier</a>
+    <a href="compte.html" style="color: #d4af37; font-weight: 600;">Mon Compte</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <h1>Mon Espace Client</h1>
+  <p>Gérez vos informations, suivez vos commandes et découvrez vos avantages exclusifs</p>
+</section>
+
+<section class="section">
+  <div class="content">
+    
+    <!-- MENU LATÉRAL -->
+    <aside class="account-sidebar">
+      <h3>Navigation</h3>
+      <ul class="sidebar-menu">
+        <li><a href="#" class="active"><i class="fas fa-user-circle"></i> Profil</a></li>
+        <li><a href="#"><i class="fas fa-box-open"></i> Mes Commandes</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Adresses</a></li>
+        <li><a href="#"><i class="fas fa-heart"></i> Favoris</a></li>
+        <li><a href="#"><i class="fas fa-star"></i> Avantages</a></li>
+        <li><a href="#"><i class="fas fa-lock"></i> Sécurité</a></li>
+        <li><a href="#"><i class="fas fa-cog"></i> Préférences</a></li>
+      </ul>
+      
+      <div style="margin-top: 30px; padding: 20px; background: rgba(212, 175, 55, 0.05); border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.1);">
+        <p style="color: #d4af37; font-size: 13px; margin-bottom: 10px;">
+          <i class="fas fa-crown"></i> Statut Privilège
+        </p>
+        <p style="color: #aaa; font-size: 12px;">Vous bénéficiez de la livraison gratuite et de réductions exclusives.</p>
+      </div>
+    </aside>
+    
+    <!-- CONTENU PRINCIPAL -->
+    <main class="account-main">
+      
+      <!-- CARTE DE BIENVENUE -->
+      <div class="welcome-card">
+        <div class="welcome-header">
+          <div class="welcome-icon">
+            <i class="fas fa-gem"></i>
+          </div>
+          <div class="welcome-text">
+            <h3>Bonjour, Sophie</h3>
+            <p>Membre depuis janvier 2023 • Client Privilège Or</p>
+          </div>
+        </div>
+        
+        <div class="welcome-stats">
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Commandes</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">€465</span>
+            <span class="stat-label">Dépensés</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Favoris</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- INFORMATIONS PERSONNELLES -->
+      <div class="account-section">
+        <div class="section-header">
+          <h3 class="section-title"><i class="fas fa-user"></i> Informations personnelles</h3>
+          <button class="btn-edit"><i class="fas fa-edit"></i> Modifier</button>
+        </div>
+        
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">Nom complet</span>
+            <span class="info-value">Sophie Martin</span>
+          </div>
+          
+          <div class="info-item">
+            <span class="info-label">Email</span>
+            <span class="info-value">sophie.martin@email.com</span>
+          </div>
+          
+          <div class="info-item">
+            <span class="info-label">Téléphone</span>
+            <span class="info-value">+33 6 12 34 56 78</span>
+          </div>
+          
+          <div class="info-item">
+            <span class="info-label">Date de naissance</span>
+            <span class="info-value">15 mars 1985</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ADRESSE -->
+      <div class="account-section">
+        <div class="section-header">
+          <h3 class="section-title"><i class="fas fa-home"></i> Adresse par défaut</h3>
+          <button class="btn-edit"><i class="fas fa-map-marker-alt"></i> Modifier</button>
+        </div>
+        
+        <div class="info-item" style="max-width: 500px;">
+          <span class="info-label">Adresse de livraison</span>
+          <span class="info-value">12 rue de l'Élégance<br>75000 Paris<br>France</span>
+        </div>
+      </div>
+      
+      <!-- COMMANDES RÉCENTES -->
+      <div class="account-section">
+        <div class="section-header">
+          <h3 class="section-title"><i class="fas fa-shopping-bag"></i> Commandes récentes</h3>
+          <a href="#" class="btn-outline"><i class="fas fa-history"></i> Voir tout</a>
+        </div>
+        
+        <div class="orders-container">
+          
+          <!-- Commande 1 -->
+          <div class="order-card">
+            <div class="order-header">
+              <span class="order-id">#HB1023</span>
+              <span class="order-date">15 avr. 2024</span>
+            </div>
+            
+            <div class="order-product">
+              <div class="product-icon">
+                <i class="fas fa-ring"></i>
+              </div>
+              <div>
+                <div class="product-name">Bague Royale - Or 18k</div>
+                <small style="color: #888;">Quantité : 1</small>
+              </div>
+            </div>
+            
+            <div class="order-price">€150</div>
+            
+            <span class="order-status status-delivered">Livrée</span>
+            
+            <div class="order-actions">
+              <a href="#" class="btn-outline"><i class="fas fa-eye"></i> Détails</a>
+              <a href="#" class="btn-outline"><i class="fas fa-redo"></i> Recommander</a>
+            </div>
+          </div>
+          
+          <!-- Commande 2 -->
+          <div class="order-card">
+            <div class="order-header">
+              <span class="order-id">#HB1018</span>
+              <span class="order-date">5 avr. 2024</span>
+            </div>
+            
+            <div class="order-product">
+              <div class="product-icon">
+                <i class="fas fa-gem"></i>
+              </div>
+              <div>
+                <div class="product-name">Collier Héritage</div>
+                <small style="color: #888;">Quantité : 1</small>
+              </div>
+            </div>
+            
+            <div class="order-price">€220</div>
+            
+            <span class="order-status status-processing">En préparation</span>
+            
+            <div class="order-actions">
+              <a href="#" class="btn-outline"><i class="fas fa-truck"></i> Suivre</a>
+              <a href="#" class="btn-outline"><i class="fas fa-comment"></i> Support</a>
+            </div>
+          </div>
+          
+          <!-- Commande 3 -->
+          <div class="order-card">
+            <div class="order-header">
+              <span class="order-id">#HB1005</span>
+              <span class="order-date">22 mars 2024</span>
+            </div>
+            
+            <div class="order-product">
+              <div class="product-icon">
+                <i class="fas fa-gem"></i>
+              </div>
+              <div>
+                <div class="product-name">Boucles Saphir</div>
+                <small style="color: #888;">Quantité : 1</small>
+              </div>
+            </div>
+            
+            <div class="order-price">€95</div>
+            
+            <span class="order-status status-delivered">Livrée</span>
+            
+            <div class="order-actions">
+              <a href="#" class="btn-outline"><i class="fas fa-eye"></i> Détails</a>
+              <a href="#" class="btn-outline"><i class="fas fa-star"></i> Noter</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- ACTIONS -->
+      <div class="actions-section">
+        <div class="action-group">
+          <button class="btn-edit"><i class="fas fa-download"></i> Exporter mes données</button>
+          <button class="btn-outline"><i class="fas fa-question-circle"></i> Centre d'aide</button>
+        </div>
+        
+        <button class="btn-danger" onclick="logout()">
+          <i class="fas fa-sign-out-alt"></i> Se déconnecter
+        </button>
+      </div>
+      
+    </main>
+    
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 Heritage Bijoux — Tous droits réservés</p>
+</footer>
+
+<script>
+  function logout() {
+    if(confirm("Voulez-vous vraiment vous déconnecter ?")) {
+      document.querySelector('.welcome-text h3').innerHTML = "Déconnexion...";
+      document.querySelector('.welcome-text p').innerHTML = "Merci pour votre visite";
+      
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1500);
+    }
+  }
+  
+  // Animation des cartes au survol
+  document.querySelectorAll('.order-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-8px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+  
+  // Navigation dans le menu
+  document.querySelectorAll('.sidebar-menu a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      document.querySelectorAll('.sidebar-menu a').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      this.classList.add('active');
+      
+      // Animation de feedback
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = '';
+      }, 150);
+    });
+  });
+</script>
+
+</body>
+</html>

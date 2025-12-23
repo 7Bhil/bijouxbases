@@ -1,0 +1,387 @@
+/* =============================================
+   COLLECTIONS - Heritage Bijoux
+   Version unifiée et optimisée
+============================================= */
+
+/* === VARIABLES ET RESET === */
+:root {
+  --color-or: #d4af37;
+  --color-argent: #c0c0c0;
+  --color-limited: #ff4081;
+  --color-dark: #0b0b0b;
+  --color-dark-light: #1a1a1a;
+  --color-text: #ffffff;
+  --color-text-light: #ccc;
+  --font-primary: "Inter", Arial, sans-serif;
+  --font-accent: "Playfair Display", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-dark);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* === HEADER COMMUN === */
+.collection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(11, 11, 11, 0.98);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.collection-header .logo {
+  font-family: var(--font-accent);
+  font-size: 28px;
+  color: var(--color-or);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.collection-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.collection-nav a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #e0e0e0;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.collection-nav a:hover {
+  color: var(--color-or);
+}
+
+/* === HERO SECTION === */
+.collection-hero {
+  padding: 180px 20px 100px;
+  text-align: center;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-hero h1 {
+  font-family: var(--font-accent);
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.collection-hero p {
+  font-size: 18px;
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === HERO SPÉCIFIQUE PAR COLLECTION === */
+.hero-or {
+  background: linear-gradient(rgba(11, 11, 11, 0.9), rgba(11, 11, 11, 0.95)),
+              url('images/hero-or.jpg') center/cover no-repeat;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.hero-argent {
+  background: linear-gradient(rgba(11, 11, 11, 0.9), rgba(11, 11, 11, 0.95)),
+              url('images/hero-argent.jpg') center/cover no-repeat;
+  border-bottom: 2px solid rgba(192, 192, 192, 0.3);
+}
+
+.hero-limited {
+  background: linear-gradient(rgba(11, 11, 11, 0.9), rgba(11, 11, 11, 0.95)),
+              url('images/hero-limited.jpg') center/cover no-repeat;
+  border-bottom: 2px solid rgba(255, 64, 129, 0.3);
+}
+
+/* === SECTION PRODUITS === */
+.collection-section {
+  padding: 80px 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Grille produits */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* Carte produit standard */
+.collection-card {
+  background: linear-gradient(145deg, var(--color-dark-light), #111);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.4s ease;
+  border: 1px solid #222;
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: currentColor;
+}
+
+.collection-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease;
+}
+
+.collection-card:hover img {
+  transform: scale(1.05);
+}
+
+.collection-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-accent);
+}
+
+.collection-card .price {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 15px 0;
+  display: block;
+}
+
+/* Styles spécifiques par collection */
+.card-or {
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.card-or .price {
+  color: var(--color-or);
+}
+
+.card-argent {
+  border-color: rgba(192, 192, 192, 0.3);
+}
+
+.card-argent .price {
+  color: var(--color-argent);
+}
+
+.card-limited {
+  border-color: rgba(255, 64, 129, 0.3);
+}
+
+.card-limited .price {
+  color: var(--color-limited);
+}
+
+/* Bouton standard */
+.collection-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--color-or);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.collection-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--color-or);
+  transform: translateY(-2px);
+}
+
+/* Bouton spécifique pour limited */
+.btn-limited {
+  background: linear-gradient(45deg, #9c27b0, #ff4081);
+  color: white;
+  border: none;
+}
+
+.btn-limited:hover {
+  background: linear-gradient(45deg, #ff4081, #9c27b0);
+}
+
+/* === ÉLÉMENTS SPÉCIFIQUES ÉDITIONS LIMITÉES === */
+.limited-counter {
+  background: rgba(156, 39, 176, 0.15);
+  border: 2px solid rgba(255, 64, 129, 0.4);
+  border-radius: 15px;
+  padding: 20px 40px;
+  margin: 30px auto 0;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.time-unit {
+  text-align: center;
+  min-width: 70px;
+}
+
+.time-number {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-limited);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-family: 'Courier New', monospace;
+}
+
+.time-label {
+  font-size: 12px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Badge limited */
+.limited-badge {
+  position: absolute;
+  top: 15px;
+  right: -30px;
+  background: linear-gradient(45deg, #9c27b0, #ff4081);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 40px;
+  transform: rotate(45deg);
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+/* Barre de disponibilité */
+.availability {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.availability-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.availability-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9c27b0, #ff4081);
+  border-radius: 3px;
+  transition: width 1s ease;
+}
+
+/* === FOOTER === */
+.collection-footer {
+  padding: 50px 30px;
+  text-align: center;
+  background: #000;
+  font-size: 14px;
+  color: #888;
+  border-top: 1px solid #222;
+  margin-top: 80px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .collection-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .collection-section {
+    padding: 60px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .collection-header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .collection-nav {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .collection-hero {
+    padding: 160px 15px 60px;
+  }
+  
+  .collection-hero h1 {
+    font-size: 36px;
+  }
+  
+  .collection-section {
+    padding: 40px 15px;
+  }
+  
+  .countdown-timer {
+    gap: 10px;
+  }
+  
+  .time-unit {
+    min-width: 60px;
+  }
+  
+  .time-number {
+    font-size: 24px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .limited-badge {
+    right: -25px;
+    padding: 6px 30px;
+    font-size: 10px;
+  }
+}

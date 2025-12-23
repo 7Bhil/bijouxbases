@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Template Collection — Heritage Bijoux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="collections.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="collection-page">
+
+<header class="collection-header">
+  <div class="logo">Heritage Bijoux</div>
+  <nav class="collection-nav">
+    <a href="index.html">Accueil</a>
+    <a href="CATEGORIES/bagues.html">Bagues</a>
+    <a href="colliers.html">Colliers</a>
+    <a href="bracelets.html">Bracelets</a>
+    <a href="collections.html">Collections</a>
+    <a href="cart.html">Panier</a>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO SECTION -->
+  <section class="collection-hero hero-[TYPE]">
+    <h1>Nom de la Collection</h1>
+    <p>Description de la collection</p>
+    <!-- Compteur optionnel pour limited -->
+    <!-- <div class="limited-counter">...</div> -->
+  </section>
+
+  <!-- SECTION PRODUITS -->
+  <section class="collection-section">
+    <div class="collection-grid">
+      
+      <!-- PRODUIT EXEMPLE -->
+      <div class="collection-card card-[TYPE]">
+        <!-- Badge optionnel pour limited -->
+        <!-- <div class="limited-badge">LIMITÉ</div> -->
+        
+        <img src="images/[collection]/produit1.jpg" alt="Nom du produit">
+        <h3>Nom du produit</h3>
+        <p class="price">Prix €</p>
+        
+        <!-- Disponibilité optionnelle pour limited -->
+        <!-- <div class="availability">
+          <div class="availability-text">
+            <span>Disponibilité</span>
+            <span class="availability-count">12/50</span>
+          </div>
+          <div class="availability-bar">
+            <div class="availability-fill" style="width: 24%"></div>
+          </div>
+        </div> -->
+        
+        <a href="produit.html?id=xxx" class="collection-btn [btn-limited]">
+          Voir détails
+        </a>
+      </div>
+      <!-- FIN PRODUIT EXEMPLE -->
+      
+    </div>
+  </section>
+</main>
+
+<footer class="collection-footer">
+  <p>© 2025 Heritage Bijoux — Collection Nom</p>
+</footer>
+
+<!-- Scripts optionnels -->
+<script>
+  // Compteur pour éditions limitées
+  function startCountdown() {
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 3);
+    
+    function update() {
+      const now = new Date();
+      const diff = endDate - now;
+      
+      if (diff <= 0) {
+        clearInterval(timer);
+        document.querySelector('.limited-counter').innerHTML = 
+          '<span style="color:#ff4081">ÉDITION TERMINÉE</span>';
+        return;
+      }
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').textContent = days.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+    
+    const timer = setInterval(update, 1000);
+    update();
+  }
+  
+  // Démarrer si nécessaire
+  if (document.querySelector('.limited-counter')) {
+    startCountdown();
+  }
+</script>
+
+</body>
+</html>

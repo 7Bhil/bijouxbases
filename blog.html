@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Journal — Heritage Bijoux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #000;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: gold;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    /* HERO */
+    .blog-hero {
+      text-align: center;
+      padding: 80px 20px 50px;
+    }
+
+    .blog-hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .blog-hero p {
+      color: #aaa;
+      font-size: 16px;
+    }
+
+    /* BLOG GRID */
+    .blog-section {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .blog-card {
+      background: #111;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 20px;
+    }
+
+    .tag {
+      font-size: 11px;
+      color: gold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .blog-content h3 {
+      font-size: 17px;
+      margin: 10px 0;
+      line-height: 1.4;
+    }
+
+    .read-more {
+      font-size: 14px;
+      color: gold;
+      font-weight: bold;
+    }
+
+    /* ARTICLE MIS EN AVANT */
+    .featured {
+      grid-column: span 2;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #000;
+      margin-top: 60px;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      .featured {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Heritage Bijoux</div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="CATEGORIES/bagues.html">Bijoux</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="blog-hero">
+  <h1>Journal</h1>
+  <p>Inspirations, conseils et savoir-faire joaillier</p>
+</section>
+
+<section class="blog-section">
+
+  <div class="blog-grid">
+
+    <article class="blog-card featured">
+      <img src="images/blog-or.jpg" alt="Or 18 carats">
+      <div class="blog-content">
+        <span class="tag">Savoir-faire</span>
+        <h3>L’or 18 carats : un choix d’excellence</h3>
+        <a href="#" class="read-more">Lire l’article →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <img src="images/blog-bague.jpg" alt="Bague">
+      <div class="blog-content">
+        <span class="tag">Guide</span>
+        <h3>Comment choisir la bague parfaite</h3>
+        <a href="#" class="read-more">Lire →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <img src="images/blog-collier.jpg" alt="Collier">
+      <div class="blog-content">
+        <span class="tag">Style</span>
+        <h3>Les colliers intemporels à adopter</h3>
+        <a href="#" class="read-more">Lire →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <img src="images/blog-entretien.jpg" alt="Entretien bijoux">
+      <div class="blog-content">
+        <span class="tag">Conseils</span>
+        <h3>Préserver l’éclat de vos bijoux</h3>
+        <a href="#" class="read-more">Lire →</a>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<footer>
+  © 2025 Heritage Bijoux — Journal
+</footer>
+
+</body>
+</html>

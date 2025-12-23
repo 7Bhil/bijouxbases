@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Panier — Heritage Bijoux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* =====================
+       RESET
+    ===================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background-color: #0b0b0b;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =====================
+       HEADER
+    ===================== */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: rgba(0, 0, 0, 0.98);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      color: #d4af37;
+      font-weight: 600;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: #d4af37;
+    }
+
+    .nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav a {
+      font-size: 15px;
+      font-weight: 500;
+      color: #e0e0e0;
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav a:hover {
+      color: #d4af37;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #d4af37;
+      transition: width 0.3s ease;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    /* =====================
+       HERO
+    ===================== */
+    .page-hero {
+      padding: 150px 20px 80px;
+      text-align: center;
+      background: linear-gradient(
+        rgba(11, 11, 11, 0.9),
+        rgba(11, 11, 11, 0.98)
+      );
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+    }
+
+    .page-hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 56px;
+      color: #d4af37;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .page-hero p {
+      font-size: 20px;
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    /* =====================
+       SECTION
+    ===================== */
+    .section {
+      padding: 60px 20px;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* =====================
+       CART BOX
+    ===================== */
+    .cart-box {
+      background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid #222;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cart-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: #d4af37;
+    }
+
+    /* CART TITLE */
+    .cart-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .cart-title h2 {
+      color: #d4af37;
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .cart-count {
+      background: rgba(212, 175, 55, 0.1);
+      color: #d4af37;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* CART LINE */
+    .cart-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #222;
+      transition: all 0.3s ease;
+    }
+
+    .cart-line:hover {
+      border-color: rgba(212, 175, 55, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .cart-line > div:first-child {
+      flex: 1;
+    }
+
+    .cart-line h4 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .cart-line small {
+      color: #aaa;
+      font-size: 14px;
+      display: block;
+    }
+
+    .cart-line span {
+      color: #d4af37;
+      font-size: 20px;
+      font-weight: 600;
+      min-width: 100px;
+      text-align: right;
+    }
+
+    /* SEPARATOR */
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #333, transparent);
+      margin: 30px 0;
+    }
+
+    /* CART TOTAL */
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: rgba(212, 175, 55, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      margin: 30px 0;
+    }
+
+    .cart-total strong {
+      color: #d4af37;
+      font-size: 24px;
+    }
+
+    /* BUTTON */
+    .btn-primary.full {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 16px;
+      font-size: 16px;
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #000;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary.full::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary.full:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary.full:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+      background: linear-gradient(135deg, #e0bd40, #d4af37);
+    }
+
+    /* CART INFO */
+    .cart-info {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      border: 1px solid #222;
+      text-align: center;
+    }
+
+    .cart-info p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .cart-info i {
+      color: #d4af37;
+      margin-right: 10px;
+    }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    .footer {
+      padding: 50px 30px;
+      text-align: center;
+      background: #000;
+      font-size: 14px;
+      color: #888;
+      border-top: 1px solid #222;
+      position: relative;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    }
+
+    /* =====================
+       ANIMATIONS
+    ===================== */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cart-box {
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    /* =====================
+       RESPONSIVE
+    ===================== */
+    @media (max-width: 768px) {
+      .header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .page-hero {
+        padding: 120px 15px 50px;
+      }
+
+      .page-hero h1 {
+        font-size: 36px;
+      }
+
+      .page-hero p {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 40px 15px;
+      }
+
+      .cart-box {
+        padding: 25px;
+      }
+
+      .cart-line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .cart-line span {
+        text-align: left;
+      }
+
+      .cart-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">Heritage Bijoux</div>
+  <nav class="nav">
+    <a href="index.html">Accueil</a>
+    <a href="CATEGORIES/bagues.html">Bijoux</a>
+    <a href="account.html">Compte</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <h1>Panier</h1>
+  <p>Vos bijoux sélectionnés avec soin</p>
+</section>
+
+<section class="section content">
+
+  <div class="cart-box">
+    
+    <div class="cart-title">
+      <h2><i class="fas fa-shopping-bag"></i> Votre panier</h2>
+      <span class="cart-count">2 articles</span>
+    </div>
+
+    <div class="cart-line">
+      <div>
+        <h4>Bague Royale</h4>
+        <small>Or 18K • Diamant central • Taille ajustable</small>
+      </div>
+      <span>150 €</span>
+    </div>
+
+    <div class="cart-line">
+      <div>
+        <h4>Collier Héritage</h4>
+        <small>Argent massif • Saphir bleu • Longueur 45cm</small>
+      </div>
+      <span>220 €</span>
+    </div>
+
+    <hr>
+
+    <div class="cart-total">
+      <strong>Total</strong>
+      <strong>370 €</strong>
+    </div>
+
+    <a href="checkout.html" class="btn-primary full">
+      <i class="fas fa-lock"></i> Passer la commande
+    </a>
+
+    <div class="cart-info">
+      <p><i class="fas fa-truck"></i> Livraison gratuite en France métropolitaine</p>
+      <p><i class="fas fa-shield-alt"></i> Paiement 100% sécurisé</p>
+      <p><i class="fas fa-undo"></i> Retour gratuit sous 30 jours</p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+  <p>© 2025 Heritage Bijoux — Excellence & Authenticité</p>
+</footer>
+
+<script>
+  // Animation pour les articles du panier
+  document.querySelectorAll('.cart-line').forEach((item, index) => {
+    item.style.animationDelay = `${index * 0.1}s`;
+    item.style.animation = 'fadeIn 0.5s ease-out forwards';
+  });
+</script>
+
+</body>
+</html>
