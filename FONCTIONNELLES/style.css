@@ -1,0 +1,763 @@
+/* =====================================================
+   RESET GLOBAL & BASE
+===================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000 !important;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   ANIMATIONS GLOBALES
+===================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 20px rgba(212,175,55,.3); }
+  50% { box-shadow: 0 0 40px rgba(212,175,55,.6); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes rotate3D {
+  from { transform: rotateY(0); }
+  to { transform: rotateY(360deg); }
+}
+
+/* =====================================================
+   HEADER — CORRIGÉ DÉFINITIVEMENT
+===================================================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 80px;
+  background: rgba(0,0,0,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212,175,55,.2);
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* container interne */
+.header > * {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+/* LOGO */
+.header .logo {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #d4af37;
+  white-space: nowrap;
+}
+
+/* NAV */
+.header .nav {
+  display: flex;
+  gap: 30px;
+  white-space: nowrap;
+}
+
+.header .nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: relative;
+  transition: color .3s;
+}
+
+.header .nav a:hover {
+  color: #d4af37;
+}
+
+.header .nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: width .3s;
+}
+
+.header .nav a:hover::after {
+  width: 100%;
+}
+
+/* =====================================================
+   HERO COMMUN
+===================================================== */
+.page-hero {
+  margin-top: 80px;
+  padding: 150px 20px 80px;
+  text-align: center;
+  background:
+    linear-gradient(rgba(10,10,10,.9),rgba(10,10,10,.95)),
+    url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1600&q=80')
+    center/cover fixed;
+  animation: fadeIn .8s ease-out;
+}
+
+.page-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+.page-hero p {
+  font-size: 22px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* =====================================================
+   CONFIGURATEUR
+===================================================== */
+.configurator {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+}
+
+.configurator-view,
+.configurator-options {
+  background: linear-gradient(145deg,#1a1a1a,#0f0f0f);
+  border-radius: 30px;
+  border: 2px solid rgba(212,175,55,.1);
+  box-shadow: 0 30px 80px rgba(0,0,0,.5);
+}
+
+/* =====================================================
+   PERSONNALISATION
+===================================================== */
+.custom-form {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 60px;
+  background: linear-gradient(145deg,#1a1a1a,#0f0f0f);
+  border-radius: 30px;
+  border: 2px solid rgba(212,175,55,.1);
+}
+
+label {
+  color: #d4af37;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 18px 25px;
+  background: rgba(255,255,255,.05);
+  border: 2px solid rgba(212,175,55,.2);
+  border-radius: 15px;
+  color: #fff;
+}
+
+/* =====================================================
+   ESSAYAGE
+===================================================== */
+.tryon {
+  padding: 80px 20px;
+}
+
+.tryon-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  background: linear-gradient(145deg,#1a1a1a,#0f0f0f);
+  border-radius: 30px;
+  border: 2px solid rgba(212,175,55,.1);
+  text-align: center;
+}
+
+/* =====================================================
+   BOUTON
+===================================================== */
+.btn-primary {
+  padding: 22px 50px;
+  background: linear-gradient(135deg,#d4af37,#b8941f);
+  color: #000;
+  border-radius: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border: none;
+  cursor: pointer;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.footer {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(to top,#000,#0a0a0a);
+  border-top: 1px solid rgba(212,175,55,.1);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 1024px) {
+  .configurator {
+    grid-template-columns: 1fr;
+  }
+
+  .header > * {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header > * {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .page-hero h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero h1 {
+    font-size: 36px;
+  }
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#d4af37,#b8941f);
+  border-radius: 5px;
+}
+/* =============================================
+   CONFIGURATEUR 3D - DESIGN SPECTACULAIRE
+============================================= */
+
+/* ANIMATIONS NOUVELLES */
+@keyframes hologramPulse {
+  0%, 100% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
+  }
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #d4af37, 0 0 20px #d4af37, 0 0 30px #d4af37;
+  }
+  50% {
+    text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ffd700;
+  }
+}
+
+@keyframes optionSelect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes particleMove {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty));
+    opacity: 0;
+  }
+}
+
+/* SECTION PRINCIPALE - DESIGN FUTURISTE */
+.configurator {
+  display: grid !important;
+  grid-template-columns: 1.8fr 1.2fr !important;
+  align-items: start !important;
+  gap: 50px !important;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 30px;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* PARTICULES DE FOND */
+.configurator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 10% 20%, rgba(212, 175, 55, 0.3) 50%, transparent 100%),
+    radial-gradient(2px 2px at 20% 80%, rgba(212, 175, 55, 0.3) 50%, transparent 100%),
+    radial-gradient(3px 3px at 40% 40%, rgba(212, 175, 55, 0.4) 50%, transparent 100%),
+    radial-gradient(1px 1px at 60% 60%, rgba(212, 175, 55, 0.2) 50%, transparent 100%),
+    radial-gradient(2px 2px at 80% 30%, rgba(212, 175, 55, 0.3) 50%, transparent 100%),
+    radial-gradient(3px 3px at 30% 70%, rgba(212, 175, 55, 0.4) 50%, transparent 100%);
+  animation: shimmer 20s linear infinite;
+  z-index: -1;
+}
+
+/* ZONE 3D - HOLOGRAMME LUXUEUX */
+.configurator-view {
+  min-height: 500px !important;
+  padding: 40px !important;
+  border-radius: 35px;
+  background: 
+    linear-gradient(145deg, rgba(26, 26, 26, 0.9), rgba(15, 15, 15, 0.9)),
+    repeating-linear-gradient(45deg, 
+      transparent, 
+      transparent 10px, 
+      rgba(212, 175, 55, 0.03) 10px, 
+      rgba(212, 175, 55, 0.03) 20px);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    inset 0 0 60px rgba(212, 175, 55, 0.1),
+    0 0 40px rgba(212, 175, 55, 0.2);
+  overflow: hidden;
+}
+
+/* EFFET BORDURE ILLUMINÉE */
+.configurator-view::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, 
+    #d4af37, 
+    #ffd700, 
+    #d4af37, 
+    #b8941f, 
+    #d4af37);
+  border-radius: 38px;
+  z-index: -1;
+  animation: shimmer 3s linear infinite;
+  filter: blur(2px);
+}
+
+/* VISUALISATION 3D */
+.placeholder-3d {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* JEWEL 3D ANIMATED */
+.jewel-3d {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  animation: rotate3D 30s linear infinite, hologramPulse 4s ease-in-out infinite;
+}
+
+.jewel-3d::before {
+  content: '💎';
+  font-size: 200px;
+  display: block;
+  text-align: center;
+  line-height: 300px;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* PROJECTION HOLOGRAPHIQUE */
+.jewel-3d::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+  filter: blur(20px);
+  animation: hologramPulse 3s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* PANEL OPTIONS - DESIGN CYBER LUXE */
+.configurator-options {
+  padding: 40px 35px !important;
+  border-radius: 35px;
+  background: 
+    linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(15, 15, 15, 0.95)),
+    repeating-linear-gradient(-45deg, 
+      transparent, 
+      transparent 2px, 
+      rgba(212, 175, 55, 0.05) 2px, 
+      rgba(212, 175, 55, 0.05) 4px);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    inset 0 0 40px rgba(212, 175, 55, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* EFFET DE LUMIÈRE LATÉRALE */
+.configurator-options::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(212, 175, 55, 0.15), transparent);
+  pointer-events: none;
+}
+
+/* TITRE NEON */
+.configurator-options h3 {
+  text-align: left !important;
+  margin-bottom: 30px !important;
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  padding-bottom: 15px;
+  animation: neonGlow 3s ease-in-out infinite;
+}
+
+.configurator-options h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, #ffd700, #d4af37);
+  border-radius: 2px;
+  animation: shimmer 2s linear infinite;
+}
+
+/* BOUTONS OPTIONS - DESIGN FICHTREMENT STYLÉ */
+.configurator-options button {
+  width: 100% !important;
+  margin-bottom: 15px !important;
+  padding: 20px 25px 20px 70px !important;
+  background: linear-gradient(90deg, 
+    rgba(212, 175, 55, 0.15) 0%,
+    rgba(212, 175, 55, 0.05) 100%);
+  color: #fff;
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  text-align: left;
+}
+
+/* ICÔNES DES BOUTONS AVEC EFFET */
+.configurator-options button::before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(212, 175, 55, 0.2);
+  transition: all 0.3s ease;
+}
+
+.configurator-options button:nth-child(2)::before { content: '💎'; background: rgba(212, 175, 55, 0.3); }
+.configurator-options button:nth-child(3)::before { content: '✨'; background: rgba(156, 39, 176, 0.3); }
+.configurator-options button:nth-child(4)::before { content: '📏'; background: rgba(33, 150, 243, 0.3); }
+.configurator-options button:nth-child(5)::before { content: '🔤'; background: rgba(76, 175, 80, 0.3); }
+
+/* EFFET DE SURVOL EXTRÊME */
+.configurator-options button:hover {
+  transform: translateX(15px) scale(1.05) !important;
+  background: linear-gradient(90deg, 
+    rgba(212, 175, 55, 0.3) 0%,
+    rgba(212, 175, 55, 0.15) 100%);
+  border-color: #d4af37;
+  box-shadow: 
+    0 15px 35px rgba(212, 175, 55, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: optionSelect 0.6s ease;
+}
+
+/* EFFET DE LUMIÈRE AU SURVOL */
+.configurator-options button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent);
+  transition: left 0.7s ease;
+}
+
+.configurator-options button:hover::after {
+  left: 100%;
+}
+
+/* BOUTON ACTIF - STYLE ULTRA VISIBLE */
+.configurator-options button.active {
+  background: linear-gradient(90deg, 
+    rgba(212, 175, 55, 0.4) 0%,
+    rgba(212, 175, 55, 0.25) 100%);
+  border-color: #ffd700;
+  box-shadow: 
+    0 0 30px rgba(212, 175, 55, 0.6),
+    inset 0 0 30px rgba(255, 255, 255, 0.15);
+  transform: translateX(10px) scale(1.03);
+}
+
+/* INDICATEUR DE SELECTION */
+.configurator-options button.active::before {
+  transform: translateY(-50%) scale(1.2);
+  background: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+/* STATUT DE CONFIGURATION */
+.config-status {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  border-left: 4px solid #d4af37;
+  animation: fadeIn 0.5s ease;
+}
+
+.config-status h4 {
+  color: #d4af37;
+  margin-bottom: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.config-status p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* BOUTON D'ACTION PRINCIPAL */
+.config-action {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #d4af37, #ffd700);
+  color: #000;
+  border: none;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.config-action::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent);
+  transition: left 0.7s ease;
+}
+
+.config-action:hover::before {
+  left: 100%;
+}
+
+.config-action:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, #ffd700, #d4af37);
+}
+
+/* RESPONSIVE ULTRA STYLÉ */
+@media (max-width: 1200px) {
+  .configurator {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .jewel-3d {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .jewel-3d::before {
+    font-size: 160px;
+    line-height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .configurator {
+    padding: 40px 20px;
+  }
+  
+  .configurator-view,
+  .configurator-options {
+    padding: 30px 25px !important;
+    border-radius: 25px;
+  }
+  
+  .jewel-3d {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .jewel-3d::before {
+    font-size: 120px;
+    line-height: 200px;
+  }
+  
+  .configurator-options button {
+    padding: 18px 20px 18px 60px !important;
+  }
+  
+  .configurator-options button::before {
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .configurator-view {
+    min-height: 350px !important;
+  }
+  
+  .jewel-3d {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .jewel-3d::before {
+    font-size: 100px;
+    line-height: 150px;
+  }
+  
+  .configurator-options h3 {
+    font-size: 24px;
+  }
+  
+  .configurator-options button:hover {
+    transform: translateX(8px) scale(1.03) !important;
+  }
+}
+
+/* AJOUTEZ CE SCRIPT POUR LES PARTICULES */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(212, 175, 55, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleMove 3s linear infinite;
+}
