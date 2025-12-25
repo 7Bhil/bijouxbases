@@ -1,0 +1,224 @@
+/* =========================
+   BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.collection-page {
+  font-family: 'Inter', sans-serif;
+  background-color: #0b0b0b;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+.collection-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(11, 11, 11, 0.95);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #d4af37;
+  letter-spacing: 1px;
+}
+
+.collection-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.collection-nav a {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: #e6e6e6;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.collection-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease;
+}
+
+.collection-nav a:hover {
+  color: #d4af37;
+}
+
+.collection-nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   HERO COLLECTION
+========================= */
+.collection-hero {
+  padding: 180px 20px 90px;
+  text-align: center;
+  background:
+    linear-gradient(rgba(11,11,11,0.85), rgba(11,11,11,0.95)),
+    url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1600&q=80')
+    center / cover fixed;
+}
+
+.collection-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  color: #d4af37;
+  margin-bottom: 15px;
+}
+
+.collection-hero p {
+  font-size: 20px;
+  color: #e0e0e0;
+  font-weight: 300;
+}
+
+/* =========================
+   SECTION COLLECTION
+========================= */
+.collection-section {
+  padding: 100px 50px;
+}
+
+.collection-grid {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 45px;
+}
+
+/* =========================
+   CARTES PRODUITS
+========================= */
+.collection-card {
+  background: linear-gradient(145deg, #161616, #0f0f0f);
+  border-radius: 28px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 35px;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  transition: all 0.4s ease;
+}
+
+.collection-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.collection-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.collection-card .price {
+  color: #d4af37;
+  font-size: 18px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* Hover luxe */
+.collection-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.collection-card:hover img {
+  transform: scale(1.08);
+}
+
+/* =========================
+   BOUTON
+========================= */
+.collection-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #d4af37, #b8941f);
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.collection-btn:hover {
+  background: linear-gradient(135deg, #e0bd40, #d4af37);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.collection-footer {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(to top, #000, #0a0a0a);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.collection-footer p {
+  color: #777;
+  font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .collection-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .collection-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .collection-hero h1 {
+    font-size: 38px;
+  }
+
+  .collection-section {
+    padding: 70px 20px;
+  }
+
+  .collection-card img {
+    height: 240px;
+  }
+}
