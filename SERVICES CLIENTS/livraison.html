@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Livraison & Retours - Heritage Bijoux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="livraison.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">Heritage Bijoux</div>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="bijoux.html">Bijoux</a>
+        <a href="guides.html">Guides</a>
+        <a href="compte.html">Compte</a>
+        <a href="panier.html">Panier</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Accueil</a>
+    <a href="bijoux.html">Bijoux</a>
+    <a href="guides.html">Guides</a>
+    <a href="compte.html">Compte</a>
+    <a href="panier.html">Panier</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="page-hero delivery-hero">
+    <div class="container">
+      <h1>Livraison & Retours</h1>
+      <p>Des services fiables et sécurisés pour votre tranquillité d'esprit</p>
+    </div>
+  </section>
+
+  <!-- Progress Steps -->
+  <section class="delivery-progress">
+    <div class="container">
+      <div class="progress-steps">
+        <div class="step active">
+          <div class="step-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="step-content">
+            <h4>Commande</h4>
+            <p>Votre commande est confirmée</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-box"></i>
+          </div>
+          <div class="step-content">
+            <h4>Préparation</h4>
+            <p>Votre colis est en préparation</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-shipping-fast"></i>
+          </div>
+          <div class="step-content">
+            <h4>Expédition</h4>
+            <p>Votre colis est en route</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <div class="step-content">
+            <h4>Livraison</h4>
+            <p>Votre colis est arrivé</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery Options -->
+  <section class="section delivery-options">
+    <div class="container">
+      <div class="section-title">
+        <h2>Options de Livraison</h2>
+        <p>Choisissez la solution qui vous convient le mieux</p>
+      </div>
+      
+      <div class="options-grid">
+        <!-- Option 1 -->
+        <div class="option-card">
+          <div class="option-header">
+            <i class="fas fa-truck"></i>
+            <h3>Livraison Standard</h3>
+            <div class="price">Gratuite</div>
+          </div>
+          <div class="option-body">
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Délai : 3-5 jours ouvrables</li>
+              <li><i class="fas fa-check-circle"></i> Suivi colis disponible</li>
+              <li><i class="fas fa-check-circle"></i> Livraison à domicile</li>
+              <li><i class="fas fa-check-circle"></i> Sans signature</li>
+            </ul>
+            <p class="note">Pour toute commande supérieure à 150€</p>
+          </div>
+        </div>
+        
+        <!-- Option 2 -->
+        <div class="option-card premium">
+          <div class="option-header">
+            <i class="fas fa-rocket"></i>
+            <h3>Livraison Express</h3>
+            <div class="price">9,90€</div>
+          </div>
+          <div class="option-body">
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Délai : 24-48h</li>
+              <li><i class="fas fa-check-circle"></i> Suivi en temps réel</li>
+              <li><i class="fas fa-check-circle"></i> Livraison avant 13h</li>
+              <li><i class="fas fa-check-circle"></i> Signature requise</li>
+              <li><i class="fas fa-check-circle"></i> Assurance incluse</li>
+            </ul>
+            <p class="note">Disponible du lundi au samedi</p>
+          </div>
+        </div>
+        
+        <!-- Option 3 -->
+        <div class="option-card">
+          <div class="option-header">
+            <i class="fas fa-store"></i>
+            <h3>Retrait en Boutique</h3>
+            <div class="price">Gratuit</div>
+          </div>
+          <div class="option-body">
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Délai : 1-2 jours</li>
+              <li><i class="fas fa-check-circle"></i> Prêt en 1 heure sur RDV</li>
+              <li><i class="fas fa-check-circle"></i> Essayage possible</li>
+              <li><i class="fas fa-check-circle"></i> Conseil expert</li>
+              <li><i class="fas fa-check-circle"></i> Emballage cadeau offert</li>
+            </ul>
+            <p class="note">12 rue de l'Élégance, 75000 Paris</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="delivery-info">
+        <div class="info-box">
+          <i class="fas fa-globe-europe"></i>
+          <h4>Livraison Internationale</h4>
+          <p>Nous livrons dans plus de 40 pays. Les délais varient de 5 à 10 jours selon la destination.</p>
+          <a href="#" class="link">Voir les pays desservis →</a>
+        </div>
+        
+        <div class="info-box">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Emballage Sécurisé</h4>
+          <p>Tous nos colis sont emballés dans des boîtes renforcées et anonymes pour plus de sécurité.</p>
+        </div>
+        
+        <div class="info-box">
+          <i class="fas fa-gift"></i>
+          <h4>Emballage Cadeau</h4>
+          <p>Nous pouvons personnaliser l'emballage avec un message et un ruban. Option gratuite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery Process -->
+  <section class="section delivery-process">
+    <div class="container">
+      <div class="section-title">
+        <h2>Processus de Livraison</h2>
+        <p>De la commande à la réception, voici comment cela se passe</p>
+      </div>
+      
+      <div class="process-timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-circle">1</div>
+          </div>
+          <div class="timeline-content">
+            <h3>Confirmation de commande</h3>
+            <p>Immédiatement après votre paiement, vous recevez un email de confirmation avec le récapitulatif de votre commande.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-circle">2</div>
+          </div>
+          <div class="timeline-content">
+            <h3>Préparation du colis</h3>
+            <p>Notre équipe prépare soigneusement votre commande sous 24h (hors week-end). Chaque bijou est vérifié et nettoyé.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-circle">3</div>
+          </div>
+          <div class="timeline-content">
+            <h3>Expédition</h3>
+            <p>Vous recevez un email avec votre numéro de suivi dès que votre colis est pris en charge par le transporteur.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-circle">4</div>
+          </div>
+          <div class="timeline-content">
+            <h3>Livraison</h3>
+            <p>Suivez votre colis en temps réel. En cas d'absence, le transporteur déposera un avis de passage.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-circle">5</div>
+          </div>
+          <div class="timeline-content">
+            <h3>Réception</h3>
+            <p>Vérifiez votre colis à réception. Vous avez 48h pour signaler tout problème éventuel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Returns Section -->
+  <section class="section returns-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Politique de Retour</h2>
+        <p>Simple, rapide et satisfaisant</p>
+      </div>
+      
+      <div class="returns-box">
+        <div class="return-policy">
+          <div class="policy-header">
+            <i class="fas fa-undo-alt"></i>
+            <div>
+              <h3>Délai de retour</h3>
+              <p class="highlight">30 jours pour changer d'avis</p>
+            </div>
+          </div>
+          
+          <div class="policy-details">
+            <div class="detail">
+              <h4><i class="fas fa-calendar-check"></i> Conditions</h4>
+              <ul>
+                <li>Articles non portés, non personnalisés</li>
+                <li>Emballage d'origine intact</li>
+                <li>Étiquettes et certificats présents</li>
+                <li>Formulaire de retour rempli</li>
+              </ul>
+            </div>
+            
+            <div class="detail">
+              <h4><i class="fas fa-euro-sign"></i> Remboursement</h4>
+              <ul>
+                <li>Remboursement sous 14 jours</li>
+                <li>Même moyen de paiement utilisé</li>
+                <li>Frais de retour à votre charge</li>
+                <li>Déduction possible si emballage endommagé</li>
+              </ul>
+            </div>
+            
+            <div class="detail">
+              <h4><i class="fas fa-exchange-alt"></i> Échange</h4>
+              <ul>
+                <li>Échange gratuit vers un autre modèle</li>
+                <li>Différence de prix recalculée</li>
+                <li>Nouvelle livraison offerte</li>
+                <li>Délai de traitement : 3-5 jours</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="returns-process">
+          <h3>Comment retourner un article ?</h3>
+          <div class="process-steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Demande de retour</h4>
+                <p>Connectez-vous à votre compte et remplissez le formulaire de retour en ligne.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Emballage</h4>
+                <p>Replacez l'article dans son emballage d'origine avec tous les accessoires.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Expédition</h4>
+                <p>Utilisez l'étiquette de retour fournie et déposez le colis au point relais.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Confirmation</h4>
+                <p>Vous recevrez un email de confirmation dès réception et traitement du retour.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="return-actions">
+            <a href="#" class="btn-primary">
+              <i class="fas fa-file-alt"></i> Formulaire de retour
+            </a>
+            <a href="#" class="btn-secondary">
+              <i class="fas fa-download"></i> Télécharger l'étiquette
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Questions sur la Livraison</h2>
+        <p>Réponses aux questions les plus fréquentes</p>
+      </div>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Puis-je modifier l'adresse de livraison après commande ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, tant que votre commande n'a pas été expédiée. Contactez notre service client au +33 1 23 45 67 89 ou par email à contact@heritagebijoux.com.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Que faire si mon colis est endommagé à la réception ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Refusez le colis et contactez-nous immédiatement. Prenez des photos du colis endommagé. Nous organiserons un remplacement immédiat.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Livrez-vous le week-end et les jours fériés ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>La livraison express est disponible le samedi. Nous ne livrons pas les dimanches et jours fériés. Les délais sont prolongés en période de fêtes.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Y a-t-il des frais de douane pour les livraisons internationales ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Pour les commandes hors UE, des frais de douane peuvent s'appliquer. Ils sont à la charge du destinataire et dépendent de la législation du pays.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Puis-je suivre ma commande en temps réel ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, dès l'expédition, vous recevez un lien de suivi par email. Vous pouvez également suivre votre commande depuis votre compte client.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Track Order Section -->
+  <section class="track-order-section">
+    <div class="container">
+      <div class="track-order-box">
+        <div class="track-order-content">
+          <h3>Suivre ma commande</h3>
+          <p>Entrez votre numéro de commande ou votre email pour connaître le statut de votre livraison</p>
+          
+          <form class="track-order-form">
+            <div class="form-group">
+              <input type="text" placeholder="Numéro de commande" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Adresse email" required>
+            </div>
+            <button type="submit" class="btn-primary full">
+              <i class="fas fa-search"></i> Suivre ma commande
+            </button>
+          </form>
+        </div>
+        <div class="track-order-image">
+          <i class="fas fa-shipping-fast"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>Heritage Bijoux</h4>
+          <p>Depuis 1995, nous créons des bijoux qui traversent le temps, alliant tradition et modernité.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Liens rapides</h4>
+          <a href="index.html">Accueil</a>
+          <a href="bijoux.html">Collection</a>
+          <a href="guides.html">Guide des bijoux</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Informations</h4>
+          <a href="garanties.html">Garanties</a>
+          <a href="livraison.html">Livraison & Retours</a>
+          <a href="confidentialite.html">Confidentialité</a>
+          <a href="cgv.html">CGV</a>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>Inscrivez-vous pour recevoir nos nouveautés et offres exclusives</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Votre email">
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Heritage Bijoux. Tous droits réservés.</p>
+        <div class="payment-methods">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
